@@ -6,7 +6,7 @@
 /*   By: dydado13 <dydado13@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 09:14:47 by dydado13          #+#    #+#             */
-/*   Updated: 2024/04/26 17:58:27 by dydado13         ###   ########.fr       */
+/*   Updated: 2024/04/26 19:00:23 by dydado13         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,8 @@ void	PhoneBook::add() {
 		this->newContactIndex++;
 
 		if (this->contactNumbers < 8) this->contactNumbers++;
-	} else {
+	} else
 		delete contact;
-	}
 	std::cout << std::endl;
 	return ;
 }
@@ -52,10 +51,10 @@ void	PhoneBook::search() {
 	}
 	std::cout << "\n"
 	<< "+-------------------------------------------+\n"
-	<< "| index | First name | last name | nickname |\n"
+	<< "|     index| FirstName|  LastName|  Nickname|\n"
 	<< "+-------------------------------------------+\n"
-	<< std::endl;
-	std::cout << this->contactNumbers << std::endl;
+	<< "+-------------------------------------------+\n";
 	for (int i = 0; i < this->contactNumbers; i++)
 		this->contacts[i]->print_contacts();
+	std::cout << std::endl;
 }

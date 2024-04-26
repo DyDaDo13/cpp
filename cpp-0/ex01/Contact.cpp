@@ -6,11 +6,12 @@
 /*   By: dydado13 <dydado13@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 09:14:56 by dydado13          #+#    #+#             */
-/*   Updated: 2024/04/26 18:05:29 by dydado13         ###   ########.fr       */
+/*   Updated: 2024/04/26 19:03:17 by dydado13         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
+#include <iomanip>
 
 Contact::Contact() {}
 
@@ -81,8 +82,9 @@ void	Contact::print_contacts() {
 	// check la len de tout les arguments 
 	// met un point a la fin et verifier que la len de la case fasse bien 10 char
 	// rechercher si il nexiste pas une fonction standanrd pour ecrire directement a droite
-	std::cout << this->stringInfo[0] << ' ';
-	std::cout << this->stringInfo[1] << ' ';
-	std::cout << this->stringInfo[2] << ' ';
-	std::cout << this->stringInfo[3] << std::endl;
+	std::cout << "|" << std::setw(10) << std::right << this->index << "|";
+	std::cout << std::setw(10) << std::right << this->stringInfo[0] << "|";
+	std::cout << std::setw(10) << std::right << this->stringInfo[1] << "|";
+	std::cout << std::setw(10) << std::right << this->stringInfo[2] << "|"
+	<< std::endl;
 }
