@@ -6,7 +6,7 @@
 /*   By: dydado13 <dydado13@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 09:14:56 by dydado13          #+#    #+#             */
-/*   Updated: 2024/04/26 19:03:17 by dydado13         ###   ########.fr       */
+/*   Updated: 2024/04/26 21:39:51 by dydado13         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,11 @@ bool	check_isalpha(std::string &str) {
 
 bool	check_isalnum(std::string &str) {
 	for (std::string::const_iterator c = str.begin(); c != str.end(); c++) {
-		if (std::isalnum(*c)) return true;
+		if (!std::isdigit(*c)) {
+			return false;
+		}
 	}
-	return (false);
+	return true;
 }
 
 int	Contact::setInfo(int index) {
@@ -42,28 +44,36 @@ int	Contact::setInfo(int index) {
 	
 	if (std::cin.eof()) {std::cin.clear(); return 1;}
 	} while (this->stringInfo[i].empty() || !check_isalpha(this->stringInfo[i]));
+
 	i++;
+	
 	do {
 	std::cout << "Enter lastName Here > ";
 	std::getline(std::cin, this->stringInfo[i]);
 	
 	if (std::cin.eof()) {std::cin.clear(); return 1;}
 	} while (this->stringInfo[i].empty() || !check_isalpha(this->stringInfo[i]));
+	
 	i++;
+	
 	do {
 	std::cout << "Enter nickName Here > ";
 	std::getline(std::cin, this->stringInfo[i]);
 	
 	if (std::cin.eof()) {std::cin.clear(); return 1;}
 	} while (this->stringInfo[i].empty());
+
 	i++;
+	
 	do {
 	std::cout << "Enter number Here > ";
 	std::getline(std::cin, this->stringInfo[i]);
 	
 	if (std::cin.eof()) {std::cin.clear(); return 1;}
 	} while (this->stringInfo[i].empty() || !check_isalnum(this->stringInfo[i]));
-	i++; 
+	
+	i++;
+	
 	do {
 	std::cout << "Enter DarkSecret Here > ";
 	std::getline(std::cin, this->stringInfo[i]);
@@ -79,12 +89,22 @@ int	Contact::setInfo(int index) {
 }
 
 void	Contact::print_contacts() {
-	// check la len de tout les arguments 
-	// met un point a la fin et verifier que la len de la case fasse bien 10 char
-	// rechercher si il nexiste pas une fonction standanrd pour ecrire directement a droite
 	std::cout << "|" << std::setw(10) << std::right << this->index << "|";
-	std::cout << std::setw(10) << std::right << this->stringInfo[0] << "|";
-	std::cout << std::setw(10) << std::right << this->stringInfo[1] << "|";
-	std::cout << std::setw(10) << std::right << this->stringInfo[2] << "|"
-	<< std::endl;
+	for (int i = 0; i < 3; i++) {
+		if (this->stringInfo[i].length() > 10)
+			std::cout << this->stringInfo[i].substr(0, 9) << ".|";
+		else
+			std::cout << std::setw(10) << std::right << this->stringInfo[i] << "|";
+	}
+	std::cout << std::endl;
+}
+
+void	Contact::printInfo() {
+	std::cout << std::endl;
+	std::cout << "NAME : " << this->stringInfo[firstName] << std::endl;
+	std::cout << "LAST NAME : " << this->stringInfo[lastName] << std::endl;
+	std::cout << "NICKNAME : " << this->stringInfo[nickName] << std::endl;
+	std::cout << "PHONE : " << this->stringInfo[phone] << std::endl;
+	std::cout << "DARK SECRET : " << this->stringInfo[DarkSecret] << std::endl;
+	std::cout << std::endl;
 }

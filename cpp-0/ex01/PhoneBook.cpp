@@ -6,11 +6,12 @@
 /*   By: dydado13 <dydado13@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 09:14:47 by dydado13          #+#    #+#             */
-/*   Updated: 2024/04/26 19:00:23 by dydado13         ###   ########.fr       */
+/*   Updated: 2024/04/26 21:30:58 by dydado13         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
+#include <string>
 
 PhoneBook::PhoneBook() {
 	this->newContactIndex = 0;
@@ -45,6 +46,7 @@ void	PhoneBook::add() {
 }
 
 void	PhoneBook::search() {
+	std::string	line;
 	if (this->contactNumbers == 0) {
 		std::cout << "\nError: no contacts\n" << std::endl;
 		return ;
@@ -56,5 +58,20 @@ void	PhoneBook::search() {
 	<< "+-------------------------------------------+\n";
 	for (int i = 0; i < this->contactNumbers; i++)
 		this->contacts[i]->print_contacts();
+	std::cout << "+-------------------------------------------+\n";
 	std::cout << std::endl;
+	while (std::cout << "INDEX > ", std::getline(std::cin, line)) {
+		if (line >= "1" && line <= "9" && line[0] - 1 - '0' == this->contactNumbers - 1) {	
+			this->contacts[line[0] - 1 - '0']->printInfo();
+		}
+		else if (line == "EXIT") {
+			std::cout << "exiting..." << std::endl;
+			break ;
+		} else if (std::cin.eof())
+			break ;
+		else
+			std::cout << "Invalid Index: Out of range" << std::endl;
+		std::cin.clear();
+	}
+	std::cin.clear();
 }

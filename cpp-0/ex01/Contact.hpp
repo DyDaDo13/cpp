@@ -6,7 +6,7 @@
 /*   By: dydado13 <dydado13@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 09:14:53 by dydado13          #+#    #+#             */
-/*   Updated: 2024/04/26 16:21:29 by dydado13         ###   ########.fr       */
+/*   Updated: 2024/04/26 21:15:50 by dydado13         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ class Contact {
 		~Contact();
 		int	setInfo(int index);
 		void	print_contacts();
+		void	printInfo();
 	private:
 		static const int	C_CNT = 5;		
 		enum content {
