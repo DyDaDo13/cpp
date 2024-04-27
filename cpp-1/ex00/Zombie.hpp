@@ -1,38 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.hpp                                        :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dydado13 <dydado13@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/26 09:14:53 by dydado13          #+#    #+#             */
-/*   Updated: 2024/04/27 11:07:11 by dydado13         ###   ########.fr       */
+/*   Created: 2024/04/27 12:01:49 by dydado13          #+#    #+#             */
+/*   Updated: 2024/04/27 12:11:31 by dydado13         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT_HPP_
-# define CONTACT_HPP_
+#ifndef ZOMBIE_HPP
+# define ZOMBIE_HPP
 
 #include <iostream>
 
-class Contact {
+class Zombie {
 	public:
-		Contact();
-		~Contact();
-		int	setInfo(int index);
-		void	print_contacts();
-		void	printInfo();
+		Zombie(std::string name);
+		~Zombie();
+		void	announce();
 	private:
-		static const int	C_CNT = 5;		
-		enum content {
-			firstName = 0,
-			lastName,
-			nickName,
-			phone,
-			DarkSecret
-		};
-		int index;
-		std::string	stringInfo[C_CNT];
+		std::string	_name;
 };
 
 #endif

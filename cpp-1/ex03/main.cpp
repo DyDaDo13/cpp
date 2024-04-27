@@ -1,38 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.hpp                                        :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dydado13 <dydado13@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/26 09:14:53 by dydado13          #+#    #+#             */
-/*   Updated: 2024/04/27 11:07:11 by dydado13         ###   ########.fr       */
+/*   Created: 2024/04/27 14:19:14 by dydado13          #+#    #+#             */
+/*   Updated: 2024/04/27 15:06:08 by dydado13         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT_HPP_
-# define CONTACT_HPP_
+#include "HumanA.hpp"
+#include "HumanB.hpp"
 
-#include <iostream>
-
-class Contact {
-	public:
-		Contact();
-		~Contact();
-		int	setInfo(int index);
-		void	print_contacts();
-		void	printInfo();
-	private:
-		static const int	C_CNT = 5;		
-		enum content {
-			firstName = 0,
-			lastName,
-			nickName,
-			phone,
-			DarkSecret
-		};
-		int index;
-		std::string	stringInfo[C_CNT];
-};
-
-#endif
+int main()
+{
+	{
+		Weapon club = Weapon("crude spiked club");
+		HumanA bob("Bob", club);
+		bob.attack();
+		club.setType("some other type of club");
+		bob.attack();
+	}
+	{
+		Weapon club = Weapon("crude spiked club");
+		HumanB jim("Jim");
+		jim.setWeapon(club);
+		jim.attack();
+		club.setType("some other type of club");
+		jim.attack();
+	}
+}

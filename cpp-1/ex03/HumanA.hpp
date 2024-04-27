@@ -1,38 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.hpp                                        :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dydado13 <dydado13@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/26 09:14:53 by dydado13          #+#    #+#             */
-/*   Updated: 2024/04/27 11:07:11 by dydado13         ###   ########.fr       */
+/*   Created: 2024/04/27 14:17:48 by dydado13          #+#    #+#             */
+/*   Updated: 2024/04/27 14:49:01 by dydado13         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT_HPP_
-# define CONTACT_HPP_
+#ifndef HUMANA_HPP_
+# define HUMANA_HPP_
 
-#include <iostream>
+#include "Weapon.hpp"
 
-class Contact {
+class HumanA {
 	public:
-		Contact();
-		~Contact();
-		int	setInfo(int index);
-		void	print_contacts();
-		void	printInfo();
+		HumanA(std::string name, Weapon &weapon);
+		~HumanA(void);
+		void	setWeapon(Weapon &Weapon);
+		void	attack(void);
 	private:
-		static const int	C_CNT = 5;		
-		enum content {
-			firstName = 0,
-			lastName,
-			nickName,
-			phone,
-			DarkSecret
-		};
-		int index;
-		std::string	stringInfo[C_CNT];
+		std::string	_name;
+		Weapon	&_weapon;
 };
 
 #endif
