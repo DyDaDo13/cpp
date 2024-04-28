@@ -6,7 +6,7 @@
 /*   By: dydado13 <dydado13@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 12:37:22 by dydado13          #+#    #+#             */
-/*   Updated: 2024/04/28 12:47:29 by dydado13         ###   ########.fr       */
+/*   Updated: 2024/04/28 19:04:40 by dydado13         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ Fixed::Fixed(Fixed const &src) {
 	this->setRawBits(src.getRawBits());
 }
 
-Fixed& Fixed::operator=(Fixed const &src) {
+Fixed &Fixed::operator=(Fixed const &src) {
 	std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &src)
 		this->_value = src.getRawBits();

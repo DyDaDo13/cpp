@@ -1,31 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dydado13 <dydado13@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/27 18:12:39 by dydado13          #+#    #+#             */
-/*   Updated: 2024/04/28 19:04:29 by dydado13         ###   ########.fr       */
+/*   Created: 2024/04/28 19:00:26 by dydado13          #+#    #+#             */
+/*   Updated: 2024/04/28 20:00:26 by dydado13         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP_
-# define FIXED_HPP_
+#ifndef CLAPTRAP_HPP_
+# define CLAPTRAP_HPP_
 
-#include <iostream>
+# include <iostream>
 
-class Fixed {
+class ClapTrap {
 	public:
-		Fixed();
-		Fixed(Fixed const &src);
-		Fixed &operator=(Fixed const &src);
-		~Fixed();
-		int getRawBits(void) const;
-		void setRawBits(int const raw);
+		ClapTrap(std::string name);
+		ClapTrap(ClapTrap const &c);
+		ClapTrap &operator=(ClapTrap const &s);
+		~ClapTrap();
+		
+		void	attack(std::string const &target);
+		void	takeDamage(unsigned int amount);
+		void	beRepaired(unsigned int amount);
+
 	private:
-		int _value;
-		static const int _bits = 8;
+		std::string	_name;
+		unsigned int	_energyPoints;
+		unsigned int	_attackDamage;
+		unsigned int	_hitPoints;
 };
 
 #endif
