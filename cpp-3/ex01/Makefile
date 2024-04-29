@@ -1,9 +1,9 @@
 CC = c++
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 
-SRCS = main.cpp Fixed.cpp
+SRCS = main.cpp ScavTrap.cpp ClapTrap.cpp
 OBJS = $(SRCS:.cpp=.o)
-EXEC = my_first_cannon
+EXEC = ScavTrap
 
 all: $(EXEC)
 
