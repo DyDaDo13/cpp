@@ -1,22 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dydado13 <dydado13@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/29 13:29:05 by dydado13          #+#    #+#             */
-/*   Updated: 2024/04/29 13:30:32 by dydado13         ###   ########.fr       */
+/*   Created: 2024/04/29 11:07:08 by dydado13          #+#    #+#             */
+/*   Updated: 2024/04/29 12:06:47 by dydado13         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
-#include "ClapTrap.hpp"
+#ifndef SCAVTRAP_HPP_
+# define SCAVTRAP_HPP_
 
-int main() {
-	FragTrap frag("joe");
+# include "ClapTrap.hpp"
+# include <iostream>
 
-	frag.attack("bob");
-	frag.highFivesGuys();
-}
+class ScavTrap : public ClapTrap{
+	public:
+		ScavTrap();
+		ScavTrap(std::string name);
+		ScavTrap(ScavTrap const &n);
+		ScavTrap &operator=(ScavTrap const &n);
+		~ScavTrap();
+
+		void attack(std::string const &target);
+		void guardGate(void);
+
+	private:
+		bool _isInGuardMode;
+};
+
+#endif

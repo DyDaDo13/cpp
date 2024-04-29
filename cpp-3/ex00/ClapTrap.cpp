@@ -6,7 +6,7 @@
 /*   By: dydado13 <dydado13@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 19:06:32 by dydado13          #+#    #+#             */
-/*   Updated: 2024/04/29 12:14:19 by dydado13         ###   ########.fr       */
+/*   Updated: 2024/04/29 13:27:09 by dydado13         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,13 @@ ClapTrap::ClapTrap(std::string name): _name(name), _energyPoints(10), _attackDam
 	std::cout << "ClapTrap constructor called for the name " << this->_name << std::endl;
 }
 
-ClapTrap::ClapTrap(ClapTrap const &n) { *this = n; }
+ClapTrap::ClapTrap(ClapTrap const &n) {
+	*this = n;
+	std::cout << "ClapTrap copy constructor called";
+}
 
 ClapTrap &ClapTrap::operator=(ClapTrap const &s) {
+	std::cout << "ClapTrap copy constructor called" << std::endl;
 	this->_name = s._name;
 	this->_attackDamage = s._attackDamage;
 	this->_energyPoints = s._energyPoints;
@@ -35,12 +39,14 @@ ClapTrap::~ClapTrap() {
 }
 
 void	ClapTrap::attack(std::string const &target) {
-	if (this->_energyPoints <= 0) {
-		std::cout << "ClapTrap " << this->_name << " is out of energy!" << std::endl;
-		return ;
+	if (this->_energyPoints > 0 && this->_hitPoints > 0) {
+		std::cout << "ClapTrap attacking " << target << " causing " << this->_attackDamage << " points of damages!" << std::endl;
+		this->_energyPoints--;
 	}
-	std::cout << "ClapTrap " << this->_name << " attacks " << target << ", causing " << this->_attackDamage << " points of damage !" << std::endl;
-	this->_energyPoints -= 1;
+	else if (this->_energyPoints == 0)
+		std::cout << "ClapTrap out of energy!" << std::endl;
+	else
+		std::cout << "ClapTrap don't have enough hit points" << std::endl;
 }
 
 void	ClapTrap::takeDamage(unsigned int amount) {
