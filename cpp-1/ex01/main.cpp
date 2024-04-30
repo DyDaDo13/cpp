@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dydado13 <dydado13@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dylmarti <dylmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 12:09:35 by dydado13          #+#    #+#             */
-/*   Updated: 2024/04/27 13:10:32 by dydado13         ###   ########.fr       */
+/*   Updated: 2024/04/30 08:34:20 by dylmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,6 @@ int main() {
 	Zombie *horde = zombieHorde(size, "zom");
 	for (int i = 0; i < size; i++)
 		horde[i].announce();
-	delete [] horde; // free un tableau de tableau
+	delete [] horde;
 	return (0);
 }

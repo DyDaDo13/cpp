@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dydado13 <dydado13@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dylmarti <dylmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 15:09:51 by dydado13          #+#    #+#             */
-/*   Updated: 2024/04/27 16:01:55 by dydado13         ###   ########.fr       */
+/*   Updated: 2024/04/30 08:33:21 by dylmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int main(int ac, char **av) {
 	std::ifstream inFile(file);
 	std::ofstream oFile("temp.txt");
 
-	std::cout << av[2] << " " << av[3] << std::endl;
+	std::cout << "in " << file << " changing " << av[2] << " to " << av[3] << std::endl;
 
 	if (s1.empty() || s2.empty()) {
 		std::cerr << "invalid input";
