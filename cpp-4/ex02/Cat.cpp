@@ -6,25 +6,25 @@
 /*   By: dydado13 <dydado13@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 09:16:42 by dydado13          #+#    #+#             */
-/*   Updated: 2024/04/30 20:39:44 by dydado13         ###   ########.fr       */
+/*   Updated: 2024/05/01 16:27:46 by dydado13         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 #include "Brain.hpp"
 
-Cat::Cat(): Animal() {
+Cat::Cat(): AAnimal() {
 	this->_brain = new Brain;
 	this->_type = "Cat";
 	std::cout << "Cat default constructor called" << std::endl;
 }
 
-Cat::Cat(std::string type): Animal(type) {
+Cat::Cat(std::string type): AAnimal(type) {
 	this->_brain = new Brain;
 	std::cout << "Cat Constructor called for " << type << std::endl;
 }
 
-Cat::Cat(Cat const &cpy): Animal(cpy) {
+Cat::Cat(Cat const &cpy): AAnimal(cpy) {
 	*this = cpy;
 	this->_brain = new Brain(*(cpy.getBrain()));
 	std::cout << "Cat Copy constructor called" << std::endl;

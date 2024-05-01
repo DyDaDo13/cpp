@@ -6,17 +6,17 @@
 /*   By: dydado13 <dydado13@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 09:14:53 by dydado13          #+#    #+#             */
-/*   Updated: 2024/04/30 13:02:14 by dydado13         ###   ########.fr       */
+/*   Updated: 2024/05/01 16:26:48 by dydado13         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CAT_HPP_
 # define CAT_HPP_
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "Brain.hpp"
 
-class Cat : public Animal {
+class Cat : public AAnimal {
 	public:
 		Cat();
 		Cat(std::string type);

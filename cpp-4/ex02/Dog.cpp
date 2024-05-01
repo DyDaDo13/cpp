@@ -6,25 +6,25 @@
 /*   By: dydado13 <dydado13@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 09:26:40 by dydado13          #+#    #+#             */
-/*   Updated: 2024/04/30 12:34:31 by dydado13         ###   ########.fr       */
+/*   Updated: 2024/05/01 16:28:05 by dydado13         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 #include "Brain.hpp"
 
-Dog::Dog(): Animal() {
+Dog::Dog(): AAnimal() {
 	this->_brain = new Brain;
 	this->_type = "Dog";
 	std::cout << "Dog default constructor called" << std::endl;
 }
 
-Dog::Dog(std::string type): Animal(type) {
+Dog::Dog(std::string type): AAnimal(type) {
 	this->_brain = new Brain;
 	std::cout << "Dog Constructor called for " << type << std::endl;
 }
 
-Dog::Dog(Dog const &cpy): Animal(cpy) {
+Dog::Dog(Dog const &cpy): AAnimal(cpy) {
 	
 	*this = cpy;
 	this->_brain = new Brain(*(cpy.getBrain()));
