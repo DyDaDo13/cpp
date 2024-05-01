@@ -1,0 +1,45 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dydado13 <dydado13@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/30 09:16:42 by dydado13          #+#    #+#             */
+/*   Updated: 2024/04/30 11:03:07 by dydado13         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "Cat.hpp"
+
+Cat::Cat(): Animal() {
+	this->_type = "Cat";
+	std::cout << "Cat default constructor called" << std::endl;
+}
+
+Cat::Cat(std::string type): Animal(type) {
+	std::cout << "Cat Constructor called for " << type << std::endl;
+}
+
+Cat::Cat(Cat const &cpy): Animal(cpy) {
+	*this = cpy;
+	std::cout << "Cat Copy constructor called" << std::endl;
+}
+
+Cat &Cat::operator=(Cat const &n) {
+	this->_type = n._type;
+	std::cout << "Cat assignation operator called" << std::endl;
+	return *this;
+}
+
+Cat::~Cat() {
+	std::cout << "Cat destructor called" << std::endl;
+}
+
+void Cat::makeSound() const {
+	std::cout << "The cat do 'MIAOU'" << std::endl;
+}
+
+std::string Cat::getType() const {
+	return this->_type;
+}
