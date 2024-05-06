@@ -6,7 +6,7 @@
 /*   By: dydado13 <dydado13@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 09:19:40 by dylmarti          #+#    #+#             */
-/*   Updated: 2024/05/06 15:04:43 by dydado13         ###   ########.fr       */
+/*   Updated: 2024/05/06 21:21:37 by dydado13         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -146,7 +146,7 @@ std::ostream	&operator<<(std::ostream &o, Form *a)
 	o << "+--------------------------+" << std::endl
 	<< "| Form:\t" << a->getName() << std::endl
 	<< "| Grade to be signed:\t" << a->getGradeForSignature() << std::endl
-	<< "| Grade to be executed:\t" << a->getGradeForSignature() << std::endl
+	<< "| Grade to be executed:\t" << a->getGradeForExecution() << std::endl
 	<< "| Signed: ";
 	if (a->getSignedValue() == true)
 		std::cout << "True";
