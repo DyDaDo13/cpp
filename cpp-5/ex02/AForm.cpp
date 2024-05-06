@@ -6,7 +6,7 @@
 /*   By: dydado13 <dydado13@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 09:19:40 by dylmarti          #+#    #+#             */
-/*   Updated: 2024/05/06 21:21:26 by dydado13         ###   ########.fr       */
+/*   Updated: 2024/05/06 21:42:43 by dydado13         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,7 +116,7 @@ bool		AForm::getSignedValue() const {
 
 void		AForm::beSigned(Bureaucrat &bureaucrat) {
 	if (bureaucrat.getGrade() > this->getGradeForSignature())
-		throw AForm::GradeTooLowException();
+		throw Bureaucrat::GradeTooLowException();
 	else if (this->_signed == false){
 		this->_signed = true;
 		std::cout << this->getName() << " Signed by " << bureaucrat.getName() << std::endl;

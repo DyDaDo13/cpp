@@ -6,7 +6,7 @@
 /*   By: dydado13 <dydado13@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 22:18:18 by dydado13          #+#    #+#             */
-/*   Updated: 2024/05/06 21:20:24 by dydado13         ###   ########.fr       */
+/*   Updated: 2024/05/06 21:39:03 by dydado13         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ int main() {
 		
 	std::cout << std::endl << "-----------------------------------------------------------------------------------------------" << std::endl << std::endl;
 	
-	Bureaucrat	*jim = new Bureaucrat("jim", 130);
+	Bureaucrat	*jim = new Bureaucrat("jim", 146);
 	ShrubberyCreationForm		*form = new ShrubberyCreationForm("home");
 
 	std::cout << form;
@@ -101,11 +101,13 @@ int main() {
 		form->execute(*jim);
 	}
 	catch (Bureaucrat::GradeTooLowException &error) {
-		std::cerr << jim->getName() << " was not able to sign the form " << form->getName() << ": " << error.what() << std::endl;
+		std::cerr << jim->getName() << " was not able to execute the form " << form->getName() << ": " << error.what() << std::endl;
 	}
 
 	std::cout << form;
 
+	delete jim;
+	delete form;
 	std::cout << std::endl;
 	return 0;
 }
