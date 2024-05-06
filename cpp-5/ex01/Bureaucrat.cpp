@@ -6,11 +6,12 @@
 /*   By: dydado13 <dydado13@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 20:00:11 by dydado13          #+#    #+#             */
-/*   Updated: 2024/05/04 22:16:19 by dydado13         ###   ########.fr       */
+/*   Updated: 2024/05/06 14:24:38 by dydado13         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 Bureaucrat::Bureaucrat(): _name("default"), _grade(150) {
 	std::cout << "Bureaucrat constructor called for " << this->getName() << " with grade of " << this->getGrade() << std::endl;
@@ -70,6 +71,11 @@ void	Bureaucrat::incrementGrade(void) {
 void	Bureaucrat::decrementGrade(void) {
 	std::cout << "Bureaucrat decrementation called" << std::endl;
 	this->setGrade(this->_grade + 1);
+}
+
+void	Bureaucrat::signForm(Form &form)
+{
+	form.beSigned(*this);
 }
 
 const char *Bureaucrat::GradeTooLowException::what(void) const throw()

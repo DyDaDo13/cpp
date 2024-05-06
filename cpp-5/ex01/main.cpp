@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dylmarti <dylmarti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dydado13 <dydado13@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 22:18:18 by dydado13          #+#    #+#             */
-/*   Updated: 2024/05/06 11:31:43 by dylmarti         ###   ########.fr       */
+/*   Updated: 2024/05/06 15:07:12 by dydado13         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,10 @@ int main() {
 	if (c != NULL)
 		delete c;
 	
+	std::cout << std::endl << "----------------------------------FORM PART--------------------------------------------" << std::endl << std::endl;
+	
 	Form *test = new Form();
+	std::cout << test;
 	delete test;
 	
 	Form *test1 = new Form(12, 13);
@@ -89,7 +92,7 @@ int main() {
 	
 	Form *test2;
 	try {	
-		test2 = new Form("jhon", 160, 151);
+		test2 = new Form("The Form", 160, 151);
 	}
 	catch (Form::GradeTooLowException &error)
 	{
@@ -98,6 +101,14 @@ int main() {
 	if (test2 != NULL)
 		delete test2;
 
+
+	Bureaucrat *bob = new Bureaucrat("bob", 140);
+	Form		*the_form = new Form(140, 140);
+	std::cout << the_form << std::endl;
+	bob->signForm(*the_form);
+	std::cout << the_form << std::endl;
+	delete bob;
+	delete the_form;
 	std::cout << std::endl;
 	return 0;
 }

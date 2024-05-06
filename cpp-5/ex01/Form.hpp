@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dylmarti <dylmarti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dydado13 <dydado13@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 09:19:59 by dylmarti          #+#    #+#             */
-/*   Updated: 2024/05/06 11:27:06 by dylmarti         ###   ########.fr       */
+/*   Updated: 2024/05/06 14:54:18 by dydado13         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define FORM_HPP_
 
 #include "Bureaucrat.hpp"
+
+class Bureaucrat;
 
 class Form {
 	public:

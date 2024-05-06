@@ -3,29 +3,39 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dylmarti <dylmarti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dydado13 <dydado13@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 09:19:40 by dylmarti          #+#    #+#             */
-/*   Updated: 2024/05/06 11:27:14 by dylmarti         ###   ########.fr       */
+/*   Updated: 2024/05/06 15:04:43 by dydado13         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
 Form::Form(): _name("default"), _signed(false), _gradeForSignature(150), _gradeForExecution(150) {
-	std::cout << "\e[31mForm constructor called for \e[0m" << this->getName() << std::endl
+	std::cout << std::endl << "\e[32mForm constructor called for \e[0m" << this->getName() << std::endl
 	<< "With theses grades: " << std::endl
-	<< "\e[32m| GradeForSignature: \e[0m" << this->getGradeForSignature() << std::endl
-	<< "\e[32m| GradeForExecution: \e[0m" << this->getGradeForExecution() << std::endl
-	<< "\e[32m| Signed: \e[0m" << this->getSignedValue() << std::endl;
+	<< "\e[33m| GradeForSignature: \e[0m" << this->getGradeForSignature() << std::endl
+	<< "\e[33m| GradeForExecution: \e[0m" << this->getGradeForExecution() << std::endl
+	<< "\e[33m| Signed: \e[0m";
+	if (this->getSignedValue() == true)
+		std::cout << "True";
+	else
+		std::cout << "False";
+	std::cout << std::endl << std::endl;
 }
 
 Form::Form(std::string name): _name(name), _signed(false), _gradeForSignature(150), _gradeForExecution(150) {
-	std::cout << "\e[31mForm constructor called for \e[0m" << this->getName() << std::endl
+	std::cout << std::endl << "\e[32mForm constructor called for \e[0m" << this->getName() << std::endl
 	<< "With theses grades: " << std::endl
-	<< "\e[32m| GradeForSignature: \e[0m" << this->getGradeForSignature() << std::endl
-	<< "\e[32m| GradeForExecution: \e[0m" << this->getGradeForExecution() << std::endl
-	<< "\e[32m| Signed: \e[0m" << this->getSignedValue() << std::endl;
+	<< "\e[33m| GradeForSignature: \e[0m" << this->getGradeForSignature() << std::endl
+	<< "\e[33m| GradeForExecution: \e[0m" << this->getGradeForExecution() << std::endl
+	<< "\e[33m| Signed: \e[0m";
+	if (this->getSignedValue() == true)
+		std::cout << "True";
+	else
+		std::cout << "False";
+	std::cout << std::endl << std::endl;
 }
 
 Form::Form(size_t gradeForSignature, size_t gradeForExecution): _name("default"), _signed(false) {
@@ -36,11 +46,16 @@ Form::Form(size_t gradeForSignature, size_t gradeForExecution): _name("default")
 	else {
 		this->_gradeForExecution = gradeForExecution;
 		this->_gradeForSignature = gradeForSignature;
-		std::cout << "\e[31mForm constructor called for \e[0m" << this->getName() << std::endl
+		std::cout << std::endl << "\e[32mForm constructor called for \e[0m" << this->getName() << std::endl
 		<< "With theses grades: " << std::endl
-		<< "\e[32m| GradeForSignature: \e[0m" << this->getGradeForSignature() << std::endl
-		<< "\e[32m| GradeForExecution: \e[0m" << this->getGradeForExecution() << std::endl
-		<< "\e[32m| Signed: \e[0m" << this->getSignedValue() << std::endl;
+		<< "\e[33m| GradeForSignature: \e[0m" << this->getGradeForSignature() << std::endl
+		<< "\e[33m| GradeForExecution: \e[0m" << this->getGradeForExecution() << std::endl
+		<< "\e[33m| Signed: \e[0m";
+		if (this->getSignedValue() == true)
+			std::cout << "True";
+		else
+			std::cout << "False";
+		std::cout << std::endl << std::endl;
 	}
 }
 
@@ -52,11 +67,16 @@ Form::Form(std::string name, size_t gradeForSignature, size_t gradeForExecution)
 	else {
 		this->_gradeForExecution = gradeForExecution;
 		this->_gradeForSignature = gradeForSignature;
-		std::cout << "\e[31mForm constructor called for \e[0m" << this->getName() << std::endl
+		std::cout << std::endl << "\e[32mForm constructor called for \e[0m" << this->getName() << std::endl
 		<< "With theses grades: " << std::endl
-		<< "\e[32m| GradeForSignature: \e[0m" << this->getGradeForSignature() << std::endl
-		<< "\e[32m| GradeForExecution: \e[0m" << this->getGradeForExecution() << std::endl
-		<< "\e[32m| Signed: \e[0m" << this->getSignedValue() << std::endl;
+		<< "\e[33m| GradeForSignature: \e[0m" << this->getGradeForSignature() << std::endl
+		<< "\e[33m| GradeForExecution: \e[0m" << this->getGradeForExecution() << std::endl
+		<< "\e[33m| Signed: \e[0m";
+		if (this->getSignedValue() == true)
+			std::cout << "True";
+		else
+			std::cout << "False";
+		std::cout << std::endl << std::endl;
 	}
 }
 
@@ -102,8 +122,12 @@ bool		Form::getSignedValue() const {
 void		Form::beSigned(Bureaucrat &bureaucrat) {
 	if (bureaucrat.getGrade() > this->getGradeForSignature())
 		throw Form::GradeTooLowException();
+	else if (this->_signed == false){
+		this->_signed = true;
+		std::cout << this->getName() << " Signed by " << bureaucrat.getName() << std::endl;
+	}
 	else {
-		///====================
+		std::cout << this->getName() << " cannot signed, already signed !" << std::endl;
 	}
 }
 
@@ -119,11 +143,16 @@ const char *Form::GradeTooHighException::what(void) const throw()
 
 std::ostream	&operator<<(std::ostream &o, Form *a)
 {
-	o << "+--------------------+" << std::endl
+	o << "+--------------------------+" << std::endl
 	<< "| Form:\t" << a->getName() << std::endl
 	<< "| Grade to be signed:\t" << a->getGradeForSignature() << std::endl
 	<< "| Grade to be executed:\t" << a->getGradeForSignature() << std::endl
-	<< "| Signed: " << a->getSignedValue() << std::endl
-	<< "+----------------------+" <<std::endl;
+	<< "| Signed: ";
+	if (a->getSignedValue() == true)
+		std::cout << "True";
+	else
+		std::cout << "False";
+	std::cout << std::endl
+	<< "+--------------------------+" <<std::endl;
 	return (o);
 }
