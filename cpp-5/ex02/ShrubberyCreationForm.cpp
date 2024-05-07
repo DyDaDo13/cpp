@@ -6,7 +6,7 @@
 /*   By: dydado13 <dydado13@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 19:54:33 by dydado13          #+#    #+#             */
-/*   Updated: 2024/05/06 21:28:58 by dydado13         ###   ########.fr       */
+/*   Updated: 2024/05/07 08:47:11 by dydado13         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,17 @@
 #include <iostream>
 #include <fstream>
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string target): AForm("SrubberyCreationForm", 145, 137), _target(target) {
-	std::cout << "SrubberyCreationForm constructor called for " << this->getTarget() << std::endl;
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target): AForm("ShrubberyCreationForm", 145, 137), _target(target) {
+	std::cout << "ShrubberyCreationForm constructor called for " << this->getTarget() << std::endl;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const &cpy): AForm("SrubberyCreationForm", 145, 137), _target(cpy.getTarget()) {
+ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const &cpy): AForm("ShrubberyCreationForm", 145, 137), _target(cpy.getTarget()) {
 	std::cout << "ShrubberyCreationForm Copy Constructor called" << std::endl;
 	*this = cpy;
 }
 
 ShrubberyCreationForm	&ShrubberyCreationForm::operator=(ShrubberyCreationForm const &n) {
-	std::cout << "ShrubberyConstructorForm assignement operator called" << std::endl;
+	std::cout << "ShrubberyCreationForm assignement operator called" << std::endl;
 	if (this == &n)
 		return *this;
 	return *this;
