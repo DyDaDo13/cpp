@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
+/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dydado13 <dydado13@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/07 09:38:17 by dydado13          #+#    #+#             */
-/*   Updated: 2024/05/07 09:52:26 by dydado13         ###   ########.fr       */
+/*   Created: 2024/05/06 19:32:35 by dydado13          #+#    #+#             */
+/*   Updated: 2024/05/06 21:16:01 by dydado13         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRESIDENTIALPARDONFORM_HPP_
-# define PRESIDENTIALPARDONFORM_HPP_
+#ifndef SHRUBBERYCREATIONFORM_HPP_
+# define SHRUBBERYCREATIONFORM_HPP_
 
 #include "AForm.hpp"
 #include "Bureaucrat.hpp"
@@ -19,12 +19,12 @@
 class Bureaucrat;
 class AForm;
 
-class PresidentialPardonForm : public AForm {
+class ShrubberyCreationForm : public AForm {
 	public:
-		PresidentialPardonForm(std::string target);
-		PresidentialPardonForm(PresidentialPardonForm const &cpy);
-		PresidentialPardonForm	&operator=(PresidentialPardonForm const &n);
-		~PresidentialPardonForm();
+		ShrubberyCreationForm(std::string target);
+		ShrubberyCreationForm(ShrubberyCreationForm const &cpy);
+		ShrubberyCreationForm	&operator=(ShrubberyCreationForm const &n);
+		~ShrubberyCreationForm();
 		
 		std::string	getTarget() const;
 		void	execute(Bureaucrat const &executer) const;
@@ -32,6 +32,6 @@ class PresidentialPardonForm : public AForm {
 		std::string	_target;
 };
 
-std::ostream	&operator<<(std::ostream &o, PresidentialPardonForm *a);
+std::ostream	&operator<<(std::ostream &o, ShrubberyCreationForm *a);
 
 #endif
