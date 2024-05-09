@@ -1,9 +1,9 @@
 CC = c++
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 
-SRCS = main.cpp
+SRCS = main.cpp A.cpp B.cpp C.cpp Base.cpp
 OBJS = $(SRCS:.cpp=.o)
-EXEC = 
+EXEC = identify
 
 all: $(EXEC)
 

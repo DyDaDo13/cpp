@@ -1,9 +1,9 @@
 CC = c++
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 
-SRCS = main.cpp
+SRCS = main.cpp Serializer.cpp
 OBJS = $(SRCS:.cpp=.o)
-EXEC = 
+EXEC = Serializer
 
 all: $(EXEC)
 
