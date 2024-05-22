@@ -6,7 +6,7 @@
 /*   By: dydado13 <dydado13@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 14:19:47 by dydado13          #+#    #+#             */
-/*   Updated: 2024/05/08 16:22:22 by dydado13         ###   ########.fr       */
+/*   Updated: 2024/05/16 12:14:16 by dydado13         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ void	ScalarConverter::print(double d) const {
 		std::cout << "char impossible" << std::endl;
 	else
 		std::cout << "char: '" << static_cast<char>(d) << "'" << std::endl;
-	if (d > 2148473647 || d < -2147483648 || d != d) {
+	if (d > 2147483647 || d < -2147483648 || d != d) {
 		std::cout << "int impossible" << std::endl;
 	}
 	else
@@ -98,7 +98,7 @@ void	ScalarConverter::print(float f) const {
 		std::cout << "char impossible" << std::endl;
 	else
 		std::cout << "char: '" << static_cast<char>(f) << "'" << std::endl;
-	if (f > 2148473647 || f < -2147483648 || f != f) {
+	if (f > static_cast<long>(2147483647) || f < static_cast<long>(-2147483648) || f != f) {
 		std::cout << "int impossible" << std::endl;
 	}
 	else
